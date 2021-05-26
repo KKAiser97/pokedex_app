@@ -1,20 +1,22 @@
+import 'package:equatable/equatable.dart';
+
 import 'next_evolution.dart';
 
-class Pokemon {
-  late int id;
-  late String number;
-  late String name;
-  late String img;
-  late List<String> type;
-  late String height;
-  late String weight;
-  late String egg;
-  late String spawnChance;
-  late String avgSpawns;
-  late String spawnTime;
-  late List<double> multipliers;
-  late List<String> weaknesses;
-  late List<NextEvolution> nextEvolution;
+class Pokemon extends Equatable {
+  late final int id;
+  late final String number;
+  late final String name;
+  late final String img;
+  late final List<String> type;
+  late final String height;
+  late final String weight;
+  late final String egg;
+  late final String spawnChance;
+  late final String avgSpawns;
+  late final String spawnTime;
+  late final List<double> multipliers;
+  late final List<String> weaknesses;
+  late final List<NextEvolution> nextEvolution;
 
   Pokemon({
     required this.id,
@@ -95,4 +97,23 @@ class Pokemon {
 
     return data;
   }
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [
+        id,
+        number,
+        name,
+        img,
+        type,
+        height,
+        weight,
+        egg,
+        spawnChance,
+        avgSpawns,
+        spawnTime,
+        multipliers,
+        weaknesses,
+        nextEvolution,
+      ];
 }

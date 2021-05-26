@@ -1,6 +1,8 @@
-class NextEvolution {
-  late String number;
-  late String name;
+import 'package:equatable/equatable.dart';
+
+class NextEvolution extends Equatable {
+  late final String number;
+  late final String name;
 
   NextEvolution.fromJson(Map<String, dynamic> json) {
     number = json['num'];
@@ -14,4 +16,8 @@ class NextEvolution {
 
     return data;
   }
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [number, name];
 }

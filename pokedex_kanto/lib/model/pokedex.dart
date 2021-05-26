@@ -1,6 +1,7 @@
+import 'package:equatable/equatable.dart';
 import 'package:pokedex_kanto/model/pokemon.dart';
 
-class Pokedex {
+class Pokedex extends Equatable {
   late final List<Pokemon> pokemon;
 
   Pokedex({required this.pokemon});
@@ -20,4 +21,8 @@ class Pokedex {
 
     return data;
   }
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [pokemon];
 }
