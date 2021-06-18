@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pokedex_kanto/event/poke_event.dart';
+import 'package:pokedex_kanto/bloc/poke_event.dart';
 import 'package:pokedex_kanto/repository/poke_repo.dart';
-import 'package:pokedex_kanto/state/poke_state.dart';
+import 'package:pokedex_kanto/bloc/poke_state.dart';
 
 class PokeBloc extends Bloc<PokeEvent, PokeState> {
   final PokeRepo pokeRepo;

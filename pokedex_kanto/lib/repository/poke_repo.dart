@@ -7,6 +7,6 @@ class PokeRepo {
   PokeRepo({required this.pokedata});
 
   @override
-  Future<Pokedex> fetchData() async => await pokedata.fetchData();
+  Future<Pokedex> fetchData () async => await pokedata.fetchData();
   //TODO: catch exception here
 }

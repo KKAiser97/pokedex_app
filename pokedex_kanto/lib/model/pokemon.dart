@@ -68,14 +68,18 @@ class Pokemon extends Equatable {
     spawnChance = json['spawn_chance'].toString();
     avgSpawns = json['avg_spawns'].toString();
     spawnTime = json['spawn_time'];
-    multipliers = json['multipliers']?.cast<double>();
+    multipliers = json['multipliers'] != null ? json['multipliers'].cast<double>() : [0.0];
     weaknesses = json['weaknesses'].cast<String>();
     if (json['next_evolution'] != null) {
       nextEvolution = [];
       json['next_evolution'].forEach((v) {
-        nextEvolution.add(new NextEvolution.fromJson(v));
+        nextEvolution.add(NextEvolution.fromJson(v));
       });
+    } else{
+      nextEvolution = [NextEvolution('5.5','nina'), NextEvolution('5.5','nina')];
     }
+
+    //nextEvolution = json['next_evolution'] != null ? json['next_evolution'] : [NextEvolution('5.5','nina')];
   }
 
   Map<String, dynamic> toJson() {
