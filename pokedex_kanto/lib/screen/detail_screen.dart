@@ -8,6 +8,22 @@ class PokeDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('Pokemon Detail'),
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(pokemon.name),
+              Image.network(pokemon.img),
+              Text(pokemon.number),
+              Text(pokemon.height),
+              Text(pokemon.weight),
+              //TODO: continue
+            ],
+          ),
+        ));
   }
 }

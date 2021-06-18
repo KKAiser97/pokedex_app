@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pokedex_kanto/bloc/poke_bloc.dart';
-import 'package:pokedex_kanto/bloc/poke_event.dart';
-import 'package:pokedex_kanto/bloc/poke_state.dart';
+import 'package:pokedex_kanto/bloc/list_poke/poke_bloc.dart';
+import 'package:pokedex_kanto/bloc/list_poke/poke_event.dart';
+import 'package:pokedex_kanto/bloc/list_poke/poke_state.dart';
 
 import 'detail_screen.dart';
 

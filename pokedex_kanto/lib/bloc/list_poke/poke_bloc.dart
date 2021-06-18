@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pokedex_kanto/bloc/poke_event.dart';
+import 'package:pokedex_kanto/bloc/list_poke/poke_event.dart';
+import 'package:pokedex_kanto/bloc/list_poke/poke_state.dart';
 import 'package:pokedex_kanto/repository/poke_repo.dart';
-import 'package:pokedex_kanto/bloc/poke_state.dart';
 
 class PokeBloc extends Bloc<PokeEvent, PokeState> {
   final PokeRepo pokeRepo;
@@ -13,17 +13,9 @@ class PokeBloc extends Bloc<PokeEvent, PokeState> {
     if (event is GetAllEvent) {
       yield PokeLoadingState();
       try {
-
         var listPokes = await pokeRepo.fetchData();
-        if(listPokes != null)
-          {
-            yield PokeSuccessState(pokedex: listPokes);
-          }
-        else
-          {
-            yield PokeFailedState();
-          }
 
+        yield PokeSuccessState(pokedex: listPokes);
       } catch (error) {
         print('Something went wrong: $error');
         yield PokeFailedState();
