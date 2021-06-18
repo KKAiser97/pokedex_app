@@ -9,7 +9,7 @@ class Pokedex extends Equatable {
   Pokedex.fromJson(Map<String, dynamic> json) {
     if (json['pokemon'] != null) {
       pokemon = <Pokemon>[];
-      json['pokemon'].cast<Pokemon>().forEach((v) {
+      json['pokemon'].forEach((v) {
         pokemon.add(new Pokemon.fromJson(v));
       });
     }
