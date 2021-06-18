@@ -60,23 +60,29 @@ class _MyHomePageState extends State<MyHomePage> {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceEvenly,
                                 children: <Widget>[
-                                  Container(
-                                    height: MediaQuery.of(context).size.height *
-                                        0.4,
-                                    width:
-                                        MediaQuery.of(context).size.width * 0.2,
-                                    decoration: BoxDecoration(
-                                        image: DecorationImage(
-                                            fit: BoxFit.cover,
-                                            image: NetworkImage(poke.img))),
-                                  ),
-                                  Text(
-                                    poke.name,
-                                    style: TextStyle(
-                                      fontSize: 20.0,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  )
+                                  Expanded(
+                                      flex: 8,
+                                      child: Container(
+                                        height:
+                                            MediaQuery.of(context).size.height *
+                                                0.2,
+                                        width:
+                                            MediaQuery.of(context).size.width *
+                                                0.2,
+                                        decoration: BoxDecoration(
+                                            image: DecorationImage(
+                                                fit: BoxFit.scaleDown,
+                                                image: NetworkImage(poke.img))),
+                                      )),
+                                  Expanded(
+                                      flex: 2,
+                                      child: Text(
+                                        poke.name,
+                                        style: TextStyle(
+                                          fontSize: 20.0,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ))
                                 ],
                               ),
                             ),
