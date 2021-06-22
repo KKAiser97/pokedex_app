@@ -14,7 +14,6 @@ class PokeBloc extends Bloc<PokeEvent, PokeState> {
       yield PokeLoadingState();
       try {
         var listPokes = await pokeRepo.fetchData();
-
         yield PokeSuccessState(pokedex: listPokes);
       } catch (error) {
         print('Something went wrong: $error');
