@@ -8,7 +8,7 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
   @override
   Stream<SplashState> mapEventToState(SplashEvent event) async* {
     if (event is GetSplashEvent) {
-      await Future.delayed(Duration(seconds: 1), () async {
+      await Future.delayed(Duration(seconds: 3), () async {
         add(NavigateNotifyEvent());
       });
     } else if (event is NavigateNotifyEvent) {
