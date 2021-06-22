@@ -18,22 +18,22 @@ class Pokemon extends Equatable {
   late final List<String> weaknesses;
   late final List<NextEvolution> nextEvolution;
 
-  Pokemon({
-    required this.id,
-    required this.number,
-    required this.name,
-    required this.img,
-    required this.type,
-    required this.height,
-    required this.weight,
-    required this.egg,
-    required this.spawnChance,
-    required this.avgSpawns,
-    required this.spawnTime,
-    required this.multipliers,
-    required this.weaknesses,
-    required this.nextEvolution,
-  });
+  Pokemon(
+    this.id,
+    this.number,
+    this.name,
+    this.img,
+    this.type,
+    this.height,
+    this.weight,
+    this.egg,
+    this.spawnChance,
+    this.avgSpawns,
+    this.spawnTime,
+    this.multipliers,
+    this.weaknesses,
+    this.nextEvolution,
+  );
 
   // factory Pokemon.fromJson(Map<String, dynamic> json) {
   //   return Pokemon(
@@ -68,15 +68,17 @@ class Pokemon extends Equatable {
     spawnChance = json['spawn_chance'].toString();
     avgSpawns = json['avg_spawns'].toString();
     spawnTime = json['spawn_time'];
-    multipliers = json['multipliers'] != null ? json['multipliers'].cast<double>() : [0.0];
+    multipliers = json['multipliers'] != null
+        ? json['multipliers'].cast<double>()
+        : [0.0];
     weaknesses = json['weaknesses'].cast<String>();
     if (json['next_evolution'] != null) {
       nextEvolution = [];
       json['next_evolution'].forEach((v) {
         nextEvolution.add(NextEvolution.fromJson(v));
       });
-    } else{
-      nextEvolution = [NextEvolution('5.5','nina'), NextEvolution('5.5','nina')];
+    } else {
+      nextEvolution = [NextEvolution('0', 'none')];
     }
 
     //nextEvolution = json['next_evolution'] != null ? json['next_evolution'] : [NextEvolution('5.5','nina')];
